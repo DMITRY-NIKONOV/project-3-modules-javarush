@@ -36,7 +36,5 @@ public class GameServlet extends HttpServlet {
         }
 
         resp.sendRedirect(req.getContextPath() + "/result.jsp");
-
     }
-
 }
