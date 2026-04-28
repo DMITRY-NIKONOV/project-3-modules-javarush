@@ -1,4 +1,4 @@
-package quest;
+package quest.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +18,6 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.getRequestDispatcher("index.jsp_").forward(req, resp);
     }
 }

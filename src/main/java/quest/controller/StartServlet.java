@@ -1,4 +1,4 @@
-package quest;
+package quest.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +11,10 @@ import java.io.IOException;
 @WebServlet("/start")
 public class StartServlet extends HttpServlet {
 
-    // "/index.jsp"
+    // "/index.jsp_"
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/index.jsp_").forward(req, resp);
 
     }
 
