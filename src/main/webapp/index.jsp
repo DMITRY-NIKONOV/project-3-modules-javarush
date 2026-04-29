@@ -1,5 +1,12 @@
-<%"@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% tagLib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%--
+  Created by IntelliJ IDEA.
+  User: sergeyproshchaev
+  Date: 27.04.2026
+  Time: 20:48
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>HelloQuest (начало)</title>
@@ -9,14 +16,14 @@
 <h2>Пролог</h2>
 <p>Текст предыстории...</p>
 
-<p>Как Ваше имя?</p>
+<p>Как ваше имя?</p>
 
 <form action="start" method="post">
- <label for="playerName">"Представьтесь, командир:"</label><br>
- <input type="text" id="playerName" name="playerName"
- placeholder="Введите Ваше имя" required
-        value="${session.playerName != null ? session.playerName : ''}"><br><br>
-<button type="submit">Н ачать приключение</button>
+  <label for="playerName">"Представьтесь, командир:"</label><br>
+  <input type="text" id="playerName" name="playerName"
+  placeholder="Введите ваше имя" required
+         value="${sessionScope.playerName != null ? sessionScope.playerName : ''}"><br><br>
+  <button type="submit">Начать приключение</button>
 </form>
 
 </body>

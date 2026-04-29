@@ -13,37 +13,38 @@ public class QuestService {
     }
 
     private void initStep() {
-        //Стартовый шаг
+        // Стартовый шаг
         steps.put("start", new QuestStep(
-                        // id
-                        "start",
-                        // text
-                        "Ты потерял память. Принять вызов НЛО?",
-                        // option1
-                        "Принять вызов",
-                        // option2
-                        "Отклонить вызов",
-                        // nextStepId1
-                        "bridge",
-                        // nextStepId1
-                        "lose1"
-                                ));
+                // id
+                "start",
+                // text
+                "Ты потерял память. Принять вызов НЛО?",
+                // option1
+                "Принять вызов",
+                // option2
+                "Отклонить вызов",
+                // nextStepId1
+                "bridge",
+                // nextStepId2
+                "lose1"
+        ));
 
         // Второй шаг
         steps.put("bridge", new QuestStep(
                 // id
                 "bridge",
                 // text
-                "Ты принял вызов. Поднимаешься на мостик к капитану?",
+                "Ты принял вызов. Поднимаешься на мостик к Капитану?",
                 // option1
                 "Подняться на мостик",
                 // option2
                 "Отказаться",
                 // nextStepId1
                 "captain",
-                // nextStepId1
+                // nextStepId2
                 "lose2"
         ));
+
         // Третий шаг
         steps.put("captain", new QuestStep(
                 // id
@@ -56,9 +57,10 @@ public class QuestService {
                 "Солгать о себе",
                 // nextStepId1
                 "win",
-                // nextStepId1
+                // nextStepId2
                 "lose3"
         ));
+
         // Победа
         steps.put("win", new QuestStep(
                 // id
@@ -71,10 +73,11 @@ public class QuestService {
                 null,
                 // nextStepId1
                 null,
-                // nextStepId1
+                // nextStepId2
                 null
         ));
-        // Поражение lose1
+
+        // Поражения lose1
         steps.put("lose1", new QuestStep(
                 // id
                 "lose1",
@@ -86,11 +89,11 @@ public class QuestService {
                 null,
                 // nextStepId1
                 null,
-                // nextStepId1
+                // nextStepId2
                 null
         ));
 
-        // Поражение lose2
+        // Поражения lose2
         steps.put("lose2", new QuestStep(
                 // id
                 "lose2",
@@ -102,10 +105,11 @@ public class QuestService {
                 null,
                 // nextStepId1
                 null,
-                // nextStepId1
+                // nextStepId2
                 null
         ));
-        // Поражение lose3
+
+        // Поражения lose3
         steps.put("lose3", new QuestStep(
                 // id
                 "lose3",
@@ -117,17 +121,19 @@ public class QuestService {
                 null,
                 // nextStepId1
                 null,
-                // nextStepId1
+                // nextStepId2
                 null
         ));
+
+
     }
 
     public QuestStep getStep(String id) {
         return steps.get(id);
     }
 
-    public boolean isFinalStep(String id) {
-        QuestStep step = steps.get(id);
+    public boolean isFinalStep(String stepId) {
+        QuestStep step = steps.get(stepId);
         return step != null && step.getOption1() == null;
     }
 
